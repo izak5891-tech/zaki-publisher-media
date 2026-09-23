@@ -65,9 +65,11 @@ for (const file of listJson(JOBS)) {
     <rect width="100%" height="100%" fill="#ffffff"/>
     <rect x="0" y="0" width="${width}" height="22" fill="#0f6b45"/>
     <rect x="70" y="110" width="${width-140}" height="${height-220}" rx="42" fill="#fbfaf6" stroke="#0f6b45" stroke-width="3"/>
-    <text x="${width/2}" y="260" text-anchor="middle" font-family="DejaVu Sans, sans-serif"
+    <text x="${width/2}" y="260" text-anchor="middle" ${direction}
+      font-family="Noto Naskh Arabic, DejaVu Sans, sans-serif"
       font-size="34" font-weight="700" fill="#0f6b45">${title}</text>
-    <text x="${width/2}" y="340" text-anchor="middle" font-family="DejaVu Sans, sans-serif"
+    <text x="${width/2}" y="340" text-anchor="middle" ${direction}
+      font-family="Noto Naskh Arabic, DejaVu Sans, sans-serif"
       font-size="62" font-weight="700" fill="#111">${subtitle}</text>
     <line x1="190" y1="405" x2="${width-190}" y2="405" stroke="#0f6b45" stroke-width="3"/>
     ${bodySvg}
