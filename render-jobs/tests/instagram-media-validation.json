@@ -6,5 +6,5 @@
   "subtitle": "Media pipeline ready",
   "body": "This image was rendered automatically from a text job. It will be used only to validate Instagram media ingestion and will not be published.",
   "footer": "Validation asset • 23 Sep 2026",
-  "output": "public/tests/instagram-media-validation.png"
+  "output": "public/tests/instagram-media-validation-v2.png"
 }
