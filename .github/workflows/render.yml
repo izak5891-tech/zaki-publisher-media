@@ -1,0 +1,51 @@
+name: Render public social media
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "render-jobs/**/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zaki-media-render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Install Arabic fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-core >/dev/null
+
+      - name: Render
+        run: node scripts/render.mjs
+
+      - name: Commit rendered media
+        run: |
+          if git status --porcelain public/ | grep .; then
+            git config user.name "Zaki Media Bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add public/
+            git commit -m "chore: render public media"
+            git push
+          else
+            echo "No rendered changes."
+          fi
