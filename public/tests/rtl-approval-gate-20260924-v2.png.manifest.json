@@ -1,0 +1,52 @@
+{
+  "renderer_version": 2,
+  "source_job": "render-jobs/tests/rtl-approval-gate-20260924.json",
+  "output": "public/tests/rtl-approval-gate-20260924-v2.png",
+  "sha256": "1b4dc5456be3c24d06c07551d62b15d35a4853ac072f1f96c73777853d6777f0",
+  "width": 1080,
+  "height": 1350,
+  "qc": {
+    "passed": true,
+    "rtl": true,
+    "safe_text_width_px": 780,
+    "body_line_count": 5,
+    "max_body_lines": 8,
+    "measured": [
+      {
+        "label": "title",
+        "width_px": 193,
+        "limit_px": 780
+      },
+      {
+        "label": "subtitle",
+        "width_px": 408,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 1",
+        "width_px": 498,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 2",
+        "width_px": 293,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 4",
+        "width_px": 458,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 5",
+        "width_px": 663,
+        "limit_px": 780
+      },
+      {
+        "label": "footer",
+        "width_px": 388,
+        "limit_px": 780
+      }
+    ]
+  }
+}
