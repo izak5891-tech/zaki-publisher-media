@@ -1,0 +1,57 @@
+{
+  "renderer_version": 2,
+  "source_job": "render-jobs/daily/2026-09-24/deen-v1.json",
+  "output": "public/daily/2026-09-24/deen-v2.png",
+  "sha256": "818050e3b818c5ade802b8eea58f60d98850612d19695bc3e6ef7ae71f1fe8c1",
+  "width": 1080,
+  "height": 1350,
+  "qc": {
+    "passed": true,
+    "rtl": true,
+    "safe_text_width_px": 780,
+    "body_line_count": 6,
+    "max_body_lines": 8,
+    "measured": [
+      {
+        "label": "title",
+        "width_px": 193,
+        "limit_px": 780
+      },
+      {
+        "label": "subtitle",
+        "width_px": 567,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 1",
+        "width_px": 420,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 2",
+        "width_px": 394,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 3",
+        "width_px": 302,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 5",
+        "width_px": 652,
+        "limit_px": 780
+      },
+      {
+        "label": "body line 6",
+        "width_px": 431,
+        "limit_px": 780
+      },
+      {
+        "label": "footer",
+        "width_px": 207,
+        "limit_px": 780
+      }
+    ]
+  }
+}
