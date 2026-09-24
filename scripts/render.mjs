@@ -88,6 +88,15 @@ for (const file of listJson(JOBS)) {
   const height = Number(job.height || 1350);
   const output = String(job.output || "").replace(/^\/+/, "");
   if (!output || !output.endsWith(".png")) throw new Error(`Invalid output in ${file}`);
+  const outPath = path.join(ROOT, output);
+
+  // Rendered assets are immutable approval artifacts.
+  // Revisions must use a new output path (v2, v3, ...), so an already-reviewed image
+  // can never be silently replaced after approval.
+  if (fs.existsSync(outPath)) {
+    console.log(`SKIP immutable rendered asset already exists: ${output}`);
+    continue;
+  }
 
   const rtl = job.rtl === true;
   const titleRaw = String(job.title || "Zaki Publisher");
@@ -172,7 +181,6 @@ for (const file of listJson(JOBS)) {
       font-size="${footerFont}" fill="#444">${footer}</text>
   </svg>`;
 
-  const outPath = path.join(ROOT, output);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   const png = await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toBuffer();
   await fs.promises.writeFile(outPath, png);
