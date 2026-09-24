@@ -1,0 +1,17 @@
+{
+  "id": "RTL-APPROVAL-GATE-20260924",
+  "width": 1080,
+  "height": 1350,
+  "rtl": true,
+  "title": "آج کی یاد دہانی",
+  "subtitle": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+  "body_lines": [
+    "یقیناً مشکل کے ساتھ آسانی ہے۔",
+    "سورۃ الشرح 94:5",
+    "",
+    "مشکل وقت ہمیشہ نہیں رہتا۔",
+    "صبر، دعا اور درست کوشش جاری رکھیں۔"
+  ],
+  "footer": "Preview • approval required",
+  "output": "public/tests/rtl-approval-gate-20260924-v1.png"
+}
