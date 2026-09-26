@@ -1,0 +1,47 @@
+{
+  "date_slug": "2026-09-26",
+  "date_urdu": "ہفتہ، 26 ستمبر 2026ء  |  13 ربیع الثانی 1448ھ",
+  "date_roman": "Saturday, 26 September 2026  |  13 Rabi al-Thani 1448 Hijri",
+  "cards": {
+    "urdu_deen": {
+      "language": "urdu",
+      "section": "دین",
+      "label": "قسم سے سودا، برکت نہیں",
+      "heading": "اللہ کا نام قیمت بڑھانے کا وسیلہ؟",
+      "paragraphs": [
+        "دکاندار نے کہا: ’’اللہ کی قسم، مجھے یہی چیز اتنے کی پڑی ہے۔‘‘ گاہک مان گیا؛ منافع ہوا، مگر اللہ کا نام نرخ بڑھانے کا اوزار بن گیا۔ سچی قسم بھی کاروباری عادت بنے تو نامِ الٰہی کی ہیبت گھٹتی ہے؛ جھوٹی ہو تو گناہ الگ۔",
+        "رسول اللہ صلی اللہ علیہ وسلم نے فرمایا: ’’قسم سامان بکوا دیتی ہے، مگر برکت مٹا دیتی ہے۔‘‘ (صحیح بخاری: 2087) چیز کی خوبی بتائیے، قیمت صاف رکھیے؛ یقین خریدنے کے لیے قسم نہ بیچیے۔ بیع کی برکت صرف زیادہ رقم نہیں، پاک کمائی اور مطمئن ضمیر بھی ہے۔"
+      ]
+    },
+    "urdu_tibb": {
+      "language": "urdu",
+      "section": "طب — جوڑ کی فوری علامت",
+      "label": "ہر سرخ جوڑ گاؤٹ نہیں",
+      "heading": "ایک جوڑ اچانک گرم اور سوجا ہوا",
+      "paragraphs": [
+        "گھٹنا اچانک گرم، سرخ اور شدید دردناک ہوا؛ پرانی ’’یورک ایسڈ‘‘ رپورٹ دیکھ کر دوا خود شروع کرلی۔ گاؤٹ ایسا دکھ سکتا ہے، مگر جوڑ کا جراثیمی انفیکشن بھی یہی صورت بنا سکتا ہے۔ اس میں تاخیر خطرناک ہے، اور بخار نہ ہونا اسے رد نہیں کرتا۔",
+        "ایک جوڑ میں اچانک شدید درد، سوجن یا وزن ڈالنے میں مشکل ہو تو اسی دن معائنہ کرائیں—خصوصاً شوگر، کمزور مدافعت یا مصنوعی جوڑ کی صورت میں۔ مالش یا پرانی دوا سے وقت نہ گزاریں؛ جلد علاج جوڑ کو نقصان سے بچا سکتا ہے۔"
+      ]
+    },
+    "roman_deen": {
+      "language": "roman",
+      "section": "Deen",
+      "label": "Qasam Se Sauda, Barkat Nahin",
+      "heading": "Allah Ka Naam Rate Badhane Ka Zariya?",
+      "paragraphs": [
+        "Dukandar bola: “Allah ki qasam, mujhe yahi cheez itne ki padi.” Grahak maan gaya; munafa hua, magar Allah ka naam rate badhane ka auzar ban gaya. Sachchi qasam ki aadat bhi uski haibat ghatati hai; jhooti ho to gunah alag.",
+        "Rasulullah sallallahu alaihi wasallam ne farmaya: “Qasam maal bikwa deti hai, magar barkat mita deti hai.” (Sahih Bukhari: 2087) Khoobi aur price saaf rakhein; qasam se yaqeen na khareedein. Barkat paisa hi nahin, paak kamai aur mutmain zameer bhi hai."
+      ]
+    },
+    "roman_tibb": {
+      "language": "roman",
+      "section": "Tibb — Joint Ki Fori Alamat",
+      "label": "Har Surkh Joint Gout Nahin",
+      "heading": "Ek Joint Achanak Garam Aur Sooja Hua",
+      "paragraphs": [
+        "Ghutna achanak garam, surkh aur dardnaak hua; “uric acid” report dekh kar dawa shuru kar li. Gout aisa lag sakta hai, magar joint infection bhi. Der khatarnak hai; bukhar na ho tab bhi infection kharij nahin hota.",
+        "Ek joint mein achanak shadeed dard, swelling ya weight dalne mein mushkil ho to usi din check-up karayein—khaas kar diabetes, weak immunity ya artificial joint mein. Massage ya purani dawa se waqt na guzarein; jaldi treatment damage se bacha sakta hai."
+      ]
+    }
+  }
+}
