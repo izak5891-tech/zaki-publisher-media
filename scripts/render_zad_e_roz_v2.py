@@ -17,7 +17,8 @@ ROOT = Path.cwd()
 OUT_DIR = ROOT / "public" / "daily" / "2026-09-26" / "zad-v2"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-FONT_ROOT = Path("/usr/share/fonts/truetype/noto")\nURDU = FONT_ROOT / "NotoNaskhArabic-Regular.ttf"
+FONT_ROOT = Path("/usr/share/fonts/truetype/noto")
+URDU = FONT_ROOT / "NotoNaskhArabic-Regular.ttf"
 URDU_BOLD = FONT_ROOT / "NotoNaskhArabic-Bold.ttf"
 ROMAN = FONT_ROOT / "NotoSans-Regular.ttf"
 ROMAN_MEDIUM = FONT_ROOT / "NotoSans-Regular.ttf"
