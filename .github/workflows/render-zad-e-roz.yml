@@ -1,0 +1,87 @@
+name: Render approved Zad-e-Roz
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "zad-source/**/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zad-e-roz-render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-core poppler-utils >/dev/null
+          python -m pip install --quiet pillow reportlab
+
+      - name: Render approved cards
+        run: python scripts/render_zad_e_roz_v2.py --input zad-source/2026-09-26.json
+
+      - name: Verify exact approved pixels
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          import hashlib, json, sys
+
+          root = Path("public/daily/2026-09-26/zad-v2")
+          expected = {
+            "zad-e-roz-urdu-deen-2026-09-26.png": "10ca4fa369c5de0585c8254b72c3c7ee9032cd9852a48ca27f55a924b5026dd5",
+            "zad-e-roz-urdu-tibb-2026-09-26.png": "517f6302a3402e94b431c9ed33faba95a065048258e9ad5e4a861262c83a4d16",
+            "zad-e-roz-roman-deen-2026-09-26.png": "11a6ec3f27068204337e914c0d92e4c88ac04a9dbc722924a051fbaaa541025b",
+            "zad-e-roz-roman-tibb-2026-09-26.png": "ce20aa8e052fc8af1840b75146b367d3957725f03890a3142aeb49de2663dfc6",
+          }
+          report = {}
+          failed = False
+          for name, wanted in expected.items():
+            p = root / name
+            data = p.read_bytes()
+            im = Image.open(p).convert("RGB")
+            pixel_hash = hashlib.sha256(im.tobytes()).hexdigest()
+            file_hash = hashlib.sha256(data).hexdigest()
+            ok = pixel_hash == wanted
+            report[name] = {
+              "pixel_sha256": pixel_hash,
+              "expected_pixel_sha256": wanted,
+              "file_sha256": file_hash,
+              "pixel_match": ok,
+              "size": list(im.size),
+            }
+            failed |= not ok
+          (root / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
+          if failed:
+            print(json.dumps(report, indent=2))
+            sys.exit("Approved-pixel verification failed; nothing will be published.")
+          print("All four approved images match pixel-for-pixel.")
+          PY
+
+      - name: Commit verified media
+        run: |
+          if git status --porcelain public/ | grep .; then
+            git config user.name "Zaki Media Bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add public/
+            git commit -m "content: verified Zad-e-Roz 2026-09-26"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No media changes."
+          fi
