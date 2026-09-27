@@ -3,7 +3,44 @@
   "title": "ZAD-E-ROZ",
   "description": "Deen aur Tibb ki Mukhtasar Rozana Rehnumai",
   "website": "https://www.hakeemzaki.com",
-  "updated_at": null,
-  "latest": null,
-  "posts": []
+  "updated_at": "2026-09-27T10:32:00+05:30",
+  "latest": "2026-09-27",
+  "posts": [
+    {
+      "date": "2026-09-27",
+      "date_display": "Sunday, 27 September 2026",
+      "hijri": "14 Rabi al-Thani 1448 Hijri",
+      "published_at": "2026-09-27T10:32:00+05:30",
+      "cards": [
+        {
+          "language": "urdu",
+          "section": "deen",
+          "title": "بیچ میں نہ پڑنا کب گناہ بن جاتا ہے؟",
+          "image_url": "https://raw.githubusercontent.com/izak5891-tech/zaki-publisher-media/main/public/zad-e-roz/2026-09-27/urdu-deen.png",
+          "sha256": "076a97e288455a7ddeb6234c3b2a8fa4dab6e98b0204df518b960c81735c141f"
+        },
+        {
+          "language": "urdu",
+          "section": "tibb",
+          "title": "تھائیرائڈ کی گولی اثر کیوں نہیں کر رہی؟",
+          "image_url": "https://raw.githubusercontent.com/izak5891-tech/zaki-publisher-media/main/public/zad-e-roz/2026-09-27/urdu-tibb.png",
+          "sha256": "acce04e1e01af5fe28e951562285d4bacf7e739b483ba6f8e5ec1a37691f6706"
+        },
+        {
+          "language": "roman",
+          "section": "deen",
+          "title": "“Mujhe Beech Mein Nahin Padna” Kab Gunah Hai?",
+          "image_url": "https://raw.githubusercontent.com/izak5891-tech/zaki-publisher-media/main/public/zad-e-roz/2026-09-27/roman-deen.png",
+          "sha256": "d355508397228a7a9567ab348d3f4d373222ebf52e528a9d3be0210e7cc6d013"
+        },
+        {
+          "language": "roman",
+          "section": "tibb",
+          "title": "Thyroid Ki Goli Asar Kyun Nahin Kar Rahi?",
+          "image_url": "https://raw.githubusercontent.com/izak5891-tech/zaki-publisher-media/main/public/zad-e-roz/2026-09-27/roman-tibb.png",
+          "sha256": "6f55affa0835e153b201b873c45283effe5200dbe07e33532c30380870600f2e"
+        }
+      ]
+    }
+  ]
 }
