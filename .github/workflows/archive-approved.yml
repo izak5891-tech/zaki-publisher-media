@@ -1,0 +1,68 @@
+name: Archive approved social media
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "archive-jobs/**/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-approved-media
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download and verify approved media
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib, urllib.request
+
+          root = pathlib.Path(".")
+          for job_path in sorted((root / "archive-jobs").rglob("*.json")):
+              job = json.loads(job_path.read_text())
+              date = job["date"]
+              out = root / "public" / "zad-e-roz" / date
+              out.mkdir(parents=True, exist_ok=True)
+              for item in job["media"]:
+                  target = out / item["filename"]
+                  expected = item["sha256"].lower()
+                  if target.exists():
+                      actual = hashlib.sha256(target.read_bytes()).hexdigest()
+                      if actual != expected:
+                          raise SystemExit(f"Existing file hash mismatch: {target}")
+                      continue
+                  with urllib.request.urlopen(item["url"], timeout=60) as r:
+                      data = r.read()
+                  actual = hashlib.sha256(data).hexdigest()
+                  if actual != expected:
+                      raise SystemExit(f"APPROVAL HASH FAIL {item['filename']}: {actual} != {expected}")
+                  target.write_bytes(data)
+                  print(f"Verified {target}: {actual}")
+          PY
+
+      - name: Commit exact approved media
+        run: |
+          if git status --porcelain public/ | grep .; then
+            git config user.name "Zaki Media Bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add public/
+            git commit -m "archive: exact approved Zad-e-Roz media"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No media changes."
+          fi
